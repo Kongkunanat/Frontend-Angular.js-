@@ -1,0 +1,54 @@
+.search-Contrainer {
+  display: flex;
+  justify-content: center;
+
+  .card {
+    max-width: 1150px;
+
+    .input-container {
+      display: flex-start;
+      align-items: center;
+
+
+      .checkerName {
+        justify-content: flex-start;
+        width: 800px;
+      }
+
+      .full-width {
+        flex-grow: 1;
+      }
+
+
+
+      .buttonGroup {
+        margin-left: 20px; /* Adjust as needed */
+        padding: 5px 20px;
+      }
+    }
+  }
+}
+
+
+.table-container {
+  display: flex;
+  justify-content: center;
+
+
+  .card {
+    max-width: 1020px;
+    width: 100%;
+  }
+
+  .material-icons.color_red {
+    color: #de4242;
+  }
+
+  .image-cell {
+    padding: 10px; // Add padding around the image
+  }
+
+}
+
+
+

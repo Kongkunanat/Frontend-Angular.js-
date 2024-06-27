@@ -1,0 +1,53 @@
+<div class="search-Contrainer">
+  <mat-card class="card" appearance="outlined">
+    <mat-card-header>
+      <form [formGroup]="myForm" autocomplete="off">
+        <div class="input-container">
+          <mat-form-field class="checkerName full-width" appearance="outline">
+            <mat-label>Search Name</mat-label>
+            <input matInput type="text" class="form-control" formControlName="fromcheckerName" placeholder="Input" (keydown.enter)="onSearch($event)">
+          </mat-form-field>
+          <button class="buttonGroup" mat-flat-button color="primary" (click)="onSearch()">Search</button>
+          <button class="buttonGroup" mat-raised-button color="new" (click)="onOpenNewDialog()">Add</button>
+        </div>
+      </form>
+    </mat-card-header>
+  </mat-card>
+</div>
+<br>
+<div class="table-container">
+  <mat-card class="card" appearance="outlined">
+    <mat-card-content>
+      <mat-table [dataSource]="dataSource">
+
+        <!-- Image Column -->
+        <ng-container matColumnDef="Image">
+          <mat-header-cell *matHeaderCellDef> Image </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <img [src]="element.url" width="300" class="image-cell">
+          </mat-cell>
+        </ng-container>
+
+        <!-- Description Column -->
+        <ng-container matColumnDef="Description">
+          <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.title}} </mat-cell>
+        </ng-container>
+
+        <!-- Action Column -->
+        <ng-container matColumnDef="Action">
+          <mat-header-cell *matHeaderCellDef> Action </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <button mat-icon-button (click)="onDelete(element)"><mat-icon class="material-icons color_red">delete</mat-icon></button>
+          </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+      </mat-table>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+
+
