@@ -86,8 +86,7 @@ export class FirstpageComponent implements AfterViewInit{
 
   searchData() {
     const searchValue = this.myForm.get('fromcheckerName')?.value.toLowerCase();
-    console.log(searchValue);
-    this.dataSource.filter = searchValue.trim().toLowerCase();
+    this.dataSource.filter = searchValue.trim();
   }
 
 
@@ -121,6 +120,13 @@ export class FirstpageComponent implements AfterViewInit{
         console.log('New clicked');
       }
     });
+  }
+
+
+  onClear(){
+    this.dataSource.data = [];
+    this.myForm.reset();
+    this.fetchAllData();
   }
 }
 
