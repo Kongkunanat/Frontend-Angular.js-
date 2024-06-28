@@ -85,7 +85,9 @@ export class FirstpageComponent implements AfterViewInit{
   }
 
   searchData() {
-    // Add search logic here
+    const searchValue = this.myForm.get('fromcheckerName')?.value.toLowerCase();
+    console.log(searchValue);
+    this.dataSource.filter = searchValue.trim().toLowerCase();
   }
 
 
